@@ -25,8 +25,18 @@
     </div>
     <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
     <div>
-        <label for="lastName">Last Name</label>
+        <label for="lastName">Last Name (*)</label>
         <input type="text" id="lastName" th:field="*{lastName}">
+    </div>
+    <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>
+    <div>
+        <label for="freePasses">Free Passes (*)</label>
+        <input type="text" id="freePasses" th:field="*{freePasses}">
+    </div>
+    <span th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}" class="error"></span>
+    <div>
+        <label for="postalCode">Postal Code (*)</label>
+        <input type="text" id="postalCode" th:field="*{postalCode}">
     </div>
     <button>Submit</button>
 </form>
