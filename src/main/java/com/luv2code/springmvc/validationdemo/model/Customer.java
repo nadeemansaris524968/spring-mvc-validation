@@ -1,10 +1,14 @@
 package com.luv2code.springmvc.validationdemo.model;
 
+import com.luv2code.springmvc.validationdemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
 
     private String firstName;
+
+    @CourseCode(value = "TOPS", message = "Course Code must start with 'TOPS'")
+    private String courseCode;
 
     @NotNull(message = "Last Name is required.")
     @Size(min = 1, message = "Last Name must be at least 1 character long.")
@@ -49,5 +53,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
